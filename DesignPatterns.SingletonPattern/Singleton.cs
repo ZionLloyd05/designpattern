@@ -1,15 +1,14 @@
-﻿namespace DesignPatterns.SingletonPattern
+﻿namespace DesignPatterns.SingletonPattern;
+
+public class Singleton
 {
-    public class Singleton
+    private static Singleton? _instance;
+
+    private Singleton() { }
+
+    public static Singleton Create()
     {
-        private static Singleton? _instance;
-
-        private Singleton() { }
-
-        public static Singleton Create()
-        {
-            _instance ??= new Singleton();
-            return _instance;
-        }
+        _instance ??= new Singleton();
+        return _instance;
     }
 }
